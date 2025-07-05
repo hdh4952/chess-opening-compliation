@@ -1,15 +1,12 @@
-import { Chess } from "chess.js";
+import MoveCard from "./components/MoveCard";
 
-function MoveView() {
-  const chess = new Chess();
-  const moves = chess.moves();
+function MoveView({ moves, onMove }) {
   return (
-    <div className="">
+    <div>
       {moves.map((move) => (
-        <div key={move} className="w-full border border-black h-32 mb-4">
-          {move}
-        </div>
+        <MoveCard key={move} move={move} onClick={() => onMove(move)} />
       ))}
+      <MoveCard key="add" move="+" onClick={() => alert("plus")} />
     </div>
   );
 }
