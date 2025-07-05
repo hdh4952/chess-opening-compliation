@@ -1,7 +1,7 @@
 import AddMoveCard from "./components/AddMoveCard";
 import MoveCard from "./components/MoveCard";
 
-function MoveView({ db, fen, possibleMoves, onMove }) {
+function MoveView({ db, fen, possibleMoves, onMove, onUndo }) {
   const moves = (() => {
     if (db.has(fen)) {
       return db.get(fen);
@@ -11,6 +11,7 @@ function MoveView({ db, fen, possibleMoves, onMove }) {
 
   return (
     <div>
+      <MoveCard move="←" onClick={() => onUndo()} />
       {moves.map(({ move, title, description }) => (
         <MoveCard
           key={move}
@@ -20,7 +21,7 @@ function MoveView({ db, fen, possibleMoves, onMove }) {
           onClick={() => onMove(move)}
         />
       ))}
-      <AddMoveCard />
+      <AddMoveCard onClick={() => {}} />
     </div>
   );
 }

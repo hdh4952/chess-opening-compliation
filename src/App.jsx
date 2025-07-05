@@ -48,7 +48,17 @@ function App() {
 
   function handleMove(move) {
     chessGame.move(move);
-    setChessPosition(chessGame.fen(), data);
+    setChessPosition(chessGame.fen());
+  }
+
+  function handleUndo() {
+    const undoObject = chessGame.undo();
+    console.log(undoObject);
+    if (!undoObject) {
+      return;
+    }
+    chessGame.load(undoObject.before);
+    setChessPosition(chessGame.fen());
   }
 
   return (
@@ -64,6 +74,7 @@ function App() {
               fen={chessGame.fen()}
               possibleMoves={chessGame.moves()}
               onMove={handleMove}
+              onUndo={handleUndo}
             />
           </div>
         </div>
