@@ -74,8 +74,7 @@ function App() {
             <MoveView
               db={db}
               setDb={setDb}
-              fen={chessGame.fen()}
-              possibleMoves={chessGame.moves()}
+              chessGame={chessGame}
               onMove={handleMove}
               onUndo={handleUndo}
             />

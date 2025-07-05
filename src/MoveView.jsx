@@ -3,13 +3,26 @@ import AddMoveCard from "./components/AddMoveCard";
 import MoveCard from "./components/MoveCard";
 import Modal from "./components/Modal";
 
-function MoveView({ db, setDb, fen, possibleMoves, onMove, onUndo }) {
+function MoveView({ db, setDb, chessGame, onMove, onUndo }) {
+  const fen = chessGame.fen();
+
   const moves = (() => {
-    if (db.has(fen)) {
-      return db.get(fen);
+    if (!db.has(fen)) {
+      db.set(fen, []);
     }
-    return [];
+
+    return db.get(fen);
   })();
+
+  function addMoveToDb(fen, move) {
+    setDb((prevDb) => {
+      const updatedDb = new Map(prevDb);
+      const list = updatedDb.get(fen) || [];
+      list.push({ move, title: "", description: "" });
+      updatedDb.set(fen, list);
+      return updatedDb;
+    });
+  }
 
   return (
     <div>
@@ -21,20 +34,36 @@ function MoveView({ db, setDb, fen, possibleMoves, onMove, onUndo }) {
           title={title}
           description={description}
           onClick={() => onMove(move)}
+          isEditable
+          fen={fen}
+          db={db}
         />
       ))}
       <AddMoveCard
-        onClick={async () => {
-          const result = await overlay.openAsync(({ isOpen, close }) => (
+        onClick={() => {
+          const addableMoves = (() => {
+            const set = new Set(chessGame.moves());
+            moves.forEach(({ move }) => set.delete(move));
+            return [...set.keys()];
+          })();
+
+          overlay.open(({ isOpen, close }) => (
             <Modal isOpen={isOpen}>
               <div className="p-4 rounded border-2 border-amber-800 bg-white h-2/3 w-1/2 relative">
-                <button onClick={close} className="absolute right-0">
+                <button onClick={close} className="absolute right-4">
                   Cancel
                 </button>
                 <span>추가할 수</span>
                 <div className="h-11/12 overflow-y-scroll mt-2">
-                  {possibleMoves.map((move) => (
-                    <MoveCard key={move} move={move} />
+                  {addableMoves.map((move) => (
+                    <MoveCard
+                      key={move}
+                      move={move}
+                      onClick={() => {
+                        addMoveToDb(fen, move);
+                        close();
+                      }}
+                    />
                   ))}
                 </div>
               </div>
