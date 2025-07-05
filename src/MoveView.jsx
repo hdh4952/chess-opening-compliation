@@ -1,12 +1,26 @@
+import AddMoveCard from "./components/AddMoveCard";
 import MoveCard from "./components/MoveCard";
 
-function MoveView({ moves, onMove }) {
+function MoveView({ db, fen, possibleMoves, onMove }) {
+  const moves = (() => {
+    if (db.has(fen)) {
+      return db.get(fen);
+    }
+    return [];
+  })();
+
   return (
     <div>
-      {moves.map((move) => (
-        <MoveCard key={move} move={move} onClick={() => onMove(move)} />
+      {moves.map(({ move, title, description }) => (
+        <MoveCard
+          key={move}
+          move={move}
+          title={title}
+          description={description}
+          onClick={() => onMove(move)}
+        />
       ))}
-      <MoveCard key="add" move="+" onClick={() => alert("plus")} />
+      <AddMoveCard />
     </div>
   );
 }
