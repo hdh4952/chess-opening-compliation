@@ -11,6 +11,12 @@
       "move": "d4",
       "title": "퀸즈 폰 오프닝",
       "description": "상대방으로 나왔을 때 무서운 첫 번째 수"
+    },
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "move": "e5",
+      "title": "오픈 게임",
+      "description": "이지요"
     }
   ]
 }

@@ -16,10 +16,10 @@ function dataInit() {
 }
 
 function App() {
-  const chessGameRef = useRef(new Chess());
-  const chessGame = chessGameRef.current;
+  const [chessGame, setChessGame] = useState(new Chess());
+  const [history, setHistory] = useState([chessGame.fen()]);
   const [chessPosition, setChessPosition] = useState(chessGame.fen());
-  const [db] = useState(dataInit());
+  const [db, setDb] = useState(dataInit());
 
   function onPieceDrop({ sourceSquare, targetSquare }) {
     if (!targetSquare) {
@@ -33,6 +33,7 @@ function App() {
         promotion: "q",
       });
 
+      setHistory((prev) => [...prev, chessGame.fen()]);
       setChessPosition(chessGame.fen());
 
       return true;
@@ -48,17 +49,18 @@ function App() {
 
   function handleMove(move) {
     chessGame.move(move);
+    setHistory((prev) => [...prev, chessGame.fen()]);
     setChessPosition(chessGame.fen());
   }
 
   function handleUndo() {
-    const undoObject = chessGame.undo();
-    console.log(undoObject);
-    if (!undoObject) {
-      return;
+    if (history.length > 1) {
+      const newHistory = history.slice(0, history.length - 1);
+      const lastGameState = new Chess(newHistory[newHistory.length - 1]);
+      setChessGame(lastGameState);
+      setHistory(newHistory);
+      setChessPosition(lastGameState.fen());
     }
-    chessGame.load(undoObject.before);
-    setChessPosition(chessGame.fen());
   }
 
   return (
@@ -71,6 +73,7 @@ function App() {
           <div className="h-3/4 w-2/5 overflow-y-scroll">
             <MoveView
               db={db}
+              setDb={setDb}
               fen={chessGame.fen()}
               possibleMoves={chessGame.moves()}
               onMove={handleMove}
