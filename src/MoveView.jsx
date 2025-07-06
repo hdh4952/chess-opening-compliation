@@ -36,7 +36,7 @@ function MoveView({ db, setDb, chessGame, onMove, onUndo }) {
           onClick={() => onMove(move)}
           isEditable
           fen={fen}
-          db={db}
+          setDb={setDb}
         />
       ))}
       <AddMoveCard
