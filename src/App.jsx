@@ -81,6 +81,24 @@ function App() {
           </div>
         </div>
       </div>
+      <button
+        className="absolute left-4 top-4 rounded border bg-black text-white px-2 py-1 cursor-pointer"
+        onClick={() => {
+          const obj = {}
+          const moves = [];
+          for (const [fen, moveList] of db) {
+            moveList.forEach(({move, title, description}) => {
+              moves.push({
+                fen, move, title, description
+              });
+            });
+          }
+          obj["moves"] = moves;
+          console.log(JSON.stringify(obj));
+        }}
+      >
+        DB JSON
+      </button>
     </div>
   );
 }

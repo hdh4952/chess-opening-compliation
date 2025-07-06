@@ -4,19 +4,31 @@
       "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
       "move": "e4",
       "title": "킹즈 폰 오프닝",
-      "description": "일반적으로 제일 많이 두는 첫 번째 수"
-    },
-    {
-      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-      "move": "d4",
-      "title": "퀸즈 폰 오프닝",
-      "description": "상대방으로 나왔을 때 무서운 첫 번째 수"
+      "description": "중앙 컨트롤 강화 / 퀸, 비숍 길 열기"
     },
     {
       "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
       "move": "e5",
-      "title": "오픈 게임",
-      "description": "이지요"
+      "title": "더블 킹즈 폰 오프닝",
+      "description": "백의 중앙 장악 억제 / 퀸, 비숍 길 열기"
+    },
+    {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "move": "Nf3",
+      "title": "킹즈 나이트 오프닝",
+      "description": "상대 e폰 공격 / 중앙 컨트롤 강화"
+    },
+    {
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "move": "Nc6",
+      "title": "..Nc6",
+      "description": "e폰 수비 / 중앙 컨트롤 강화"
+    },
+    {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "move": "Bc4",
+      "title": "이탈리안 게임",
+      "description": "중앙 좋은 대각선 차지 / 상대 f7폰 공격"
     }
   ]
 }
