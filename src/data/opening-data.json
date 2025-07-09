@@ -29,6 +29,390 @@
       "move": "Bc4",
       "title": "이탈리안 게임",
       "description": "중앙 좋은 대각선 차지 / 상대 f7폰 공격"
+    },
+    {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "move": "Bc5",
+      "title": "지우코 피아노",
+      "description": ""
+    },
+    {
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "move": "Nf6",
+      "title": "투 나이트 디펜스",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "move": "c3",
+      "title": "지우코 피아노 메인 라인",
+      "description": "d4 준비"
+    },
+    {
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4",
+      "move": "Nf6",
+      "title": "지우코 피아노 메인 라인",
+      "description": "e폰 압박"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5",
+      "move": "d4",
+      "title": "지우코 피아노 센터 어택",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 1 5",
+      "move": "d3",
+      "title": "지우코 피아니시모",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5",
+      "move": "exd4",
+      "title": "지우코 피아노 센터 어택",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5",
+      "move": "Bb6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/1bn2n2/4p3/2BPP3/2P2N2/PP3PPP/RNBQK2R w KQkq - 1 6",
+      "move": "dxe5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/1bn2n2/4P3/2B1P3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "move": "Nxe4",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/1bn5/4P3/2B1n3/2P2N2/PP3PPP/RNBQK2R w KQkq - 0 7",
+      "move": "Qd5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": "e4 나이트 공격, f7 체크메이트 위협"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b5/2BpP3/2P2N2/PP3PPP/RNBQK2R w KQkq - 0 6",
+      "move": "cxd4",
+      "title": "그레코 갬빗",
+      "description": "e4폰을 내주고 기물 전개 속도를 올리는 갬빗 라인"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b5/2BpP3/2P2N2/PP3PPP/RNBQK2R w KQkq - 0 6",
+      "move": "e5",
+      "title": "지우코 피아노 센터 어택 메인 라인",
+      "description": "f7 나이트 공격. 만약 나이트가 이동할 시 백한테 유리"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b5/2BPP3/5N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "move": "Bb4+",
+      "title": "그레코 갬빗",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/5N2/PP3PPP/RNBQK2R w KQkq - 1 7",
+      "move": "Nc3",
+      "title": "그레코 갬빗",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/2N2N2/PP3PPP/R1BQK2R b KQkq - 2 7",
+      "move": "Nxe4",
+      "title": "그레코 갬빗",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQK2R w KQkq - 0 8",
+      "move": "O-O",
+      "title": "그레코 갬빗 메인 라인",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQ1RK1 b kq - 1 8",
+      "move": "Bxc3",
+      "title": "그레코 갬빗 메인 라인",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1P3/2Bp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "move": "d5",
+      "title": "지우코 피아노 센터 어택 메인 라인",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1P3/2Bp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "move": "Ng8",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": "흑 전개 속도 느려짐"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1P3/2Bp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "move": "Nd5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": "나이트가 잡힘"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1P3/2Bp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "move": "Nh5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": "백의 Ng5가 매우 강력해짐"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1P3/2Bp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "move": "Ne4",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": "Bd5로 백이 유리해짐"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1P3/2Bp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 6",
+      "move": "Ng4",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": "cxd4 이후 백이 유리해짐"
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n2n2/2bpP3/2Bp4/2P2N2/PP3PPP/RNBQK2R w KQkq d6 0 7",
+      "move": "exd6",
+      "title": "피우코 피아노 센터 어택 실수",
+      "description": "흑의 전개가 빨라지고 d4폰 회수가 불가능"
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n2n2/2bpP3/2Bp4/2P2N2/PP3PPP/RNBQK2R w KQkq d6 0 7",
+      "move": "exf6",
+      "title": "피우코 피아노 센터 어택 실수",
+      "description": "흑의 쌍비숍 이점 및 중앙 힘이 강해짐"
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n2n2/2bpP3/2Bp4/2P2N2/PP3PPP/RNBQK2R w KQkq d6 0 7",
+      "move": "Bb5",
+      "title": "지우코 피아노 센터 어택 메인 라인",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2nP1n2/2b5/2Bp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 7",
+      "move": "Qxd6",
+      "title": "피우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n2P2/2bp4/2Bp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 7",
+      "move": "dxc4",
+      "title": "피우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n2P2/2b5/2pp4/2P2N2/PP3PPP/RNBQK2R w KQkq - 0 8",
+      "move": "fxg7",
+      "title": "피우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppp2pPp/2n5/2b5/2pp4/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 8",
+      "move": "Rg8",
+      "title": "피우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n2n2/1BbpP3/3p4/2P2N2/PP3PPP/RNBQK2R b KQkq - 1 7",
+      "move": "Ne4",
+      "title": "지우코 피아노 센터 어택 메인 라인",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n5/1BbpP3/3pn3/2P2N2/PP3PPP/RNBQK2R w KQkq - 2 8",
+      "move": "cxd4",
+      "title": "지우코 피아노 센터 어택 메인 라인",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppp2ppp/2n5/1BbpP3/3Pn3/5N2/PP3PPP/RNBQK2R b KQkq - 0 8",
+      "move": "Bb6",
+      "title": "지우코 피아노 센터 어택 메인 라인",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2bnP3/2Bp4/2P2N2/PP3PPP/RNBQK2R w KQkq - 1 7",
+      "move": "Bxd5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1P2n/2Bp4/2P2N2/PP3PPP/RNBQK2R w KQkq - 1 7",
+      "move": "Ng5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": "h5 나이트 공격, 룩-퀸 포크 위협"
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1P3/2Bpn3/2P2N2/PP3PPP/RNBQK2R w KQkq - 1 7",
+      "move": "Bd5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2bBP3/3pn3/2P2N2/PP3PPP/RNBQK2R b KQkq - 2 7",
+      "move": "f5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2bBP3/3pn3/2P2N2/PP3PPP/RNBQK2R b KQkq - 2 7",
+      "move": "dxc3",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2bBP3/3pn3/2P2N2/PP3PPP/RNBQK2R b KQkq - 2 7",
+      "move": "Nxf2",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp2pp/2n5/2bBPp2/3pn3/2P2N2/PP3PPP/RNBQK2R w KQkq f6 0 8",
+      "move": "cxd4",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2bBP3/4n3/2p2N2/PP3PPP/RNBQK2R w KQkq - 0 8",
+      "move": "Bxe4",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2bBP3/3p4/2P2N2/PP3nPP/RNBQK2R w KQkq - 0 8",
+      "move": "Kxf2",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2bBP3/3p4/2P2N2/PP3KPP/RNBQ3R b kq - 0 8",
+      "move": "dxc3+",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2bBP3/8/2p2N2/PP3KPP/RNBQ3R w kq - 0 9",
+      "move": "Kg3",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1P3/2Bp2n1/2P2N2/PP3PPP/RNBQK2R w KQkq - 1 7",
+      "move": "cxd4",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1P3/2BP2n1/5N2/PP3PPP/RNBQK2R b KQkq - 0 7",
+      "move": "Bb4+",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1P3/2BP2n1/5N2/PP3PPP/RNBQK2R b KQkq - 0 7",
+      "move": "Bb6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/2n5/4P3/1bBP2n1/5N2/PP3PPP/RNBQK2R w KQkq - 1 8",
+      "move": "Nc3",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/1bn5/4P3/2BP2n1/5N2/PP3PPP/RNBQK2R w KQkq - 1 8",
+      "move": "h3",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/1bn5/4P3/2BP2n1/5N1P/PP3PP1/RNBQK2R b KQkq - 0 8",
+      "move": "Nh6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/1bn4n/4P3/2BP4/5N1P/PP3PP1/RNBQK2R w KQkq - 1 9",
+      "move": "d5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/1bn4n/3PP3/2B5/5N1P/PP3PP1/RNBQK2R b KQkq - 0 9",
+      "move": "Nb8",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pppp1ppp/1bn4n/3PP3/2B5/5N1P/PP3PP1/RNBQK2R b KQkq - 0 9",
+      "move": "Ne7",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "rnbqk2r/pppp1ppp/1b5n/3PP3/2B5/5N1P/PP3PP1/RNBQK2R w KQkq - 1 10",
+      "move": "Bg5",
+      "title": "",
+      "description": ""
+    },
+    {
+      "fen": "rnbqk2r/pppp1ppp/1b5n/3PP1B1/2B5/5N1P/PP3PP1/RN1QK2R b KQkq - 2 10",
+      "move": "f6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "rnbqk2r/pppp2pp/1b3p1n/3PP1B1/2B5/5N1P/PP3PP1/RN1QK2R w KQkq - 0 11",
+      "move": "exf6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "rnbqk2r/pppp2pp/1b3P1n/3P2B1/2B5/5N1P/PP3PP1/RN1QK2R b KQkq - 0 11",
+      "move": "gxf6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "rnbqk2r/pppp3p/1b3p1n/3P2B1/2B5/5N1P/PP3PP1/RN1QK2R w KQkq - 0 12",
+      "move": "Bxh6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppppnppp/1b5n/3PP3/2B5/5N1P/PP3PP1/RNBQK2R w KQkq - 1 10",
+      "move": "d6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/ppppnppp/1b1P3n/4P3/2B5/5N1P/PP3PP1/RNBQK2R b KQkq - 0 10",
+      "move": "cxd6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pp1pnppp/1b1p3n/4P3/2B5/5N1P/PP3PP1/RNBQK2R w KQkq - 0 11",
+      "move": "exd6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pp1pnppp/1b1P3n/8/2B5/5N1P/PP3PP1/RNBQK2R b KQkq - 0 11",
+      "move": "Nc6",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
+    },
+    {
+      "fen": "r1bqk2r/pp1p1ppp/1bnP3n/8/2B5/5N1P/PP3PP1/RNBQK2R w KQkq - 1 12",
+      "move": "Bg5",
+      "title": "지우코 피아노 센터 어택 실수",
+      "description": ""
     }
   ]
 }
