@@ -1,8 +1,10 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import MoveView from "./MoveView";
-import { Chessboard } from "react-chessboard";
+import { Chessboard, defaultSquareStyle } from "react-chessboard";
 import { Chess } from "chess.js";
 import data from "./data/opening-data.json";
+import { overlay } from "overlay-kit";
+import AddMoveModal from "./components/AddMoveModal";
 
 function dataInit() {
   const db = new Map();
@@ -18,39 +20,105 @@ function dataInit() {
 function App() {
   const [chessGame, setChessGame] = useState(new Chess());
   const [history, setHistory] = useState([chessGame.fen()]);
-  const [chessPosition, setChessPosition] = useState(chessGame.fen());
   const [db, setDb] = useState(dataInit());
+  const [moveFrom, setMoveFrom] = useState("");
+  const [optionSquares, setOptionSquares] = useState({});
 
-  function onPieceDrop({ sourceSquare, targetSquare }) {
-    if (!targetSquare) {
+  function getMoveOptions(square) {
+    const moves = chessGame.moves({
+      square,
+      verbose: true,
+    });
+
+    if (moves.length === 0) {
+      setOptionSquares({});
       return false;
+    }
+
+    const newSquares = {};
+
+    for (const move of moves) {
+      newSquares[move.to] = {
+        background:
+          chessGame.get(move.to) &&
+          chessGame.get(move.to)?.color !== chessGame.get(square)?.color
+            ? "radial-gradient(circle, rgba(0,0,0,.1) 85%, transparent 85%)"
+            : "radial-gradient(circle, rgba(0,0,0,.1) 25%, transparent 25%)",
+        borderRadius: "50%",
+      };
+    }
+
+    newSquares[square] = {
+      background: "rgba(255, 255, 0, 0.4)",
+    };
+
+    setOptionSquares(newSquares);
+
+    return true;
+  }
+
+  function onSquareClick({ square, piece }) {
+    if (!moveFrom && piece) {
+      const hasMoveOptions = getMoveOptions(square);
+
+      if (hasMoveOptions) {
+        setMoveFrom(square);
+      }
+
+      return;
+    }
+
+    const moves = chessGame.moves({
+      square: moveFrom,
+      verbose: true,
+    });
+
+    const foundMove = moves.find((m) => m.from === moveFrom && m.to === square);
+
+    if (!foundMove) {
+      const hasMoveOptions = getMoveOptions(square);
+      setMoveFrom(hasMoveOptions ? square : "");
+      return;
     }
 
     try {
-      chessGame.move({
-        from: sourceSquare,
-        to: targetSquare,
-        promotion: "q",
-      });
-
-      setHistory((prev) => [...prev, chessGame.fen()]);
-      setChessPosition(chessGame.fen());
-
-      return true;
+      handleMove(foundMove.san);
+      // chessGame.move({
+      //   from: moveFrom,
+      //   to: square,
+      //   promotion: "q",
+      // });
     } catch {
-      return false;
+      const hasMoveOptions = getMoveOptions(square);
+
+      if (hasMoveOptions) {
+        setMoveFrom(square);
+      }
+
+      return;
     }
+
+    setMoveFrom("");
+    setOptionSquares({});
   }
 
   const chessboardOptions = {
-    position: chessPosition,
-    onPieceDrop,
+    allowDragging: false,
+    onSquareClick,
+    position: chessGame.fen(),
+    defaultSquareStyle,
+    squareStyles: optionSquares,
   };
 
-  function handleMove(move) {
-    chessGame.move(move);
-    setHistory((prev) => [...prev, chessGame.fen()]);
-    setChessPosition(chessGame.fen());
+  async function handleMove(move) {
+    const newChessGame = new Chess(chessGame.fen());
+    newChessGame.move(move);
+    setChessGame(newChessGame);
+    setHistory((prev) => [...prev, newChessGame.fen()]);
+    const a = await overlay.openAsync(({ isOpen, close }) => (
+      <AddMoveModal isOpen={isOpen} close={close} />
+    ));
+    console.log(move, a);
   }
 
   function handleUndo() {
@@ -59,7 +127,6 @@ function App() {
       const lastGameState = new Chess(newHistory[newHistory.length - 1]);
       setChessGame(lastGameState);
       setHistory(newHistory);
-      setChessPosition(lastGameState.fen());
     }
   }
 
@@ -84,12 +151,15 @@ function App() {
       <button
         className="absolute left-4 top-4 rounded border bg-black text-white px-2 py-1 cursor-pointer"
         onClick={() => {
-          const obj = {}
+          const obj = {};
           const moves = [];
           for (const [fen, moveList] of db) {
-            moveList.forEach(({move, title, description}) => {
+            moveList.forEach(({ move, title, description }) => {
               moves.push({
-                fen, move, title, description
+                fen,
+                move,
+                title,
+                description,
               });
             });
           }
