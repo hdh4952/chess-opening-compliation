@@ -2,26 +2,15 @@ import { overlay } from "overlay-kit";
 import AddMoveCard from "./components/AddMoveCard";
 import MoveCard from "./components/MoveCard";
 import Modal from "./components/Modal";
+import useMoves from "./hooks/useMoves";
 
-function MoveView({ db, setDb, chessGame, onMove, onUndo }) {
+function MoveView({ chessGame, onMove, onUndo }) {
   const fen = chessGame.fen();
 
-  const moves = (() => {
-    if (!db.has(fen)) {
-      db.set(fen, []);
-    }
-
-    return db.get(fen);
-  })();
+  const { data: moves } = useMoves(fen);
 
   function addMoveToDb(fen, move) {
-    setDb((prevDb) => {
-      const updatedDb = new Map(prevDb);
-      const list = updatedDb.get(fen) || [];
-      list.push({ move, title: "", description: "" });
-      updatedDb.set(fen, list);
-      return updatedDb;
-    });
+    console.log(fen, move);
   }
 
   return (
@@ -36,7 +25,7 @@ function MoveView({ db, setDb, chessGame, onMove, onUndo }) {
           onClick={() => onMove(move)}
           isEditable
           fen={fen}
-          setDb={setDb}
+          setDb={() => {}}
         />
       ))}
       <AddMoveCard

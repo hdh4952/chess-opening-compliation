@@ -2,25 +2,12 @@ import { useState } from "react";
 import MoveView from "./MoveView";
 import { Chessboard, defaultSquareStyle } from "react-chessboard";
 import { Chess } from "chess.js";
-import data from "./data/opening-data.json";
 import { overlay } from "overlay-kit";
 import AddMoveModal from "./components/AddMoveModal";
-
-function dataInit() {
-  const db = new Map();
-  data.moves.forEach(({ fen, move, title, description }) => {
-    if (!db.has(fen)) {
-      db.set(fen, []);
-    }
-    db.get(fen).push({ move, title, description });
-  });
-  return db;
-}
 
 function App() {
   const [chessGame, setChessGame] = useState(new Chess());
   const [history, setHistory] = useState([chessGame.fen()]);
-  const [db, setDb] = useState(dataInit());
   const [moveFrom, setMoveFrom] = useState("");
   const [optionSquares, setOptionSquares] = useState({});
 
@@ -139,8 +126,6 @@ function App() {
           </div>
           <div className="h-3/4 w-2/5 overflow-y-scroll">
             <MoveView
-              db={db}
-              setDb={setDb}
               chessGame={chessGame}
               onMove={handleMove}
               onUndo={handleUndo}
@@ -148,27 +133,6 @@ function App() {
           </div>
         </div>
       </div>
-      <button
-        className="absolute left-4 top-4 rounded border bg-black text-white px-2 py-1 cursor-pointer"
-        onClick={() => {
-          const obj = {};
-          const moves = [];
-          for (const [fen, moveList] of db) {
-            moveList.forEach(({ move, title, description }) => {
-              moves.push({
-                fen,
-                move,
-                title,
-                description,
-              });
-            });
-          }
-          obj["moves"] = moves;
-          console.log(JSON.stringify(obj));
-        }}
-      >
-        DB JSON
-      </button>
     </div>
   );
 }
