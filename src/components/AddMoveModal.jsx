@@ -7,7 +7,7 @@ function AddMoveModal({ isOpen, close, move }) {
 
   return (
     <Modal isOpen={isOpen}>
-      <div className="p-4 rounded border-2 border-amber-800 bg-white h-2/3 w-1/2 relative">
+      <div className="p-4 rounded border-2 border-amber-800 bg-white h-2/3 w-1/2 max-sm:w-4/5 relative">
         <span className="text-lg font-bold">{move}</span>
         <div className="h-11/12 flex flex-col justify-around mt-2">
           <label htmlFor="title" className="mb-4">

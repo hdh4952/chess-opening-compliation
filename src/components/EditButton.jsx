@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import { useState } from "react";
 import ConfirmModal from "./ConfirmModal";
 
-function EditButton({ move, title, description, onSave }) {
+function EditButton({ move, title, description, onSave, onDelete }) {
   return (
     <button
       className="absolute right-4 z-100 bg-blue-400 hover:bg-blue-600 text-white rounded px-2 py-1 hover:cursor-pointer"
@@ -11,12 +11,13 @@ function EditButton({ move, title, description, onSave }) {
         e.stopPropagation();
         overlay.open(({ isOpen, close }) => (
           <ModalWithEdit
+            isOpen={isOpen}
+            close={close}
             move={move}
             title={title}
             description={description}
             onSave={onSave}
-            isOpen={isOpen}
-            close={close}
+            onDelete={onDelete}
           />
         ));
       }}
@@ -26,13 +27,21 @@ function EditButton({ move, title, description, onSave }) {
   );
 }
 
-function ModalWithEdit({ move, title, description, onSave, isOpen, close }) {
+function ModalWithEdit({
+  isOpen,
+  close,
+  move,
+  title,
+  description,
+  onSave,
+  onDelete,
+}) {
   const [editedTitle, setEditedTitle] = useState(title);
   const [editedDescription, setEditedDescription] = useState(description);
 
   return (
     <Modal isOpen={isOpen}>
-      <div className="p-4 rounded border-2 border-amber-800 bg-white h-2/3 w-1/2 relative">
+      <div className="p-4 rounded border-2 border-amber-800 bg-white max-sm:w-4/5 h-2/3 w-1/2 relative">
         <span className="text-lg font-bold">{move}</span>
         <div className="h-11/12 flex flex-col justify-around mt-2">
           <label htmlFor="title" className="mb-4">
@@ -66,7 +75,7 @@ function ModalWithEdit({ move, title, description, onSave, isOpen, close }) {
                   )
                 );
                 if (isConfirm) {
-                  console.log("delete move");
+                  onDelete();
                 }
                 close();
               }}

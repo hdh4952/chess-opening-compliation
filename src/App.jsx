@@ -49,15 +49,14 @@ function App() {
 
   return (
     <div className="h-screen w-screen flex items-center">
-      <div className="h-full w-full flex items-center p-16">
-        <div className="flex h-full w-full justify-around items-center">
-          {/* <AddMoveModal isOpen={true} close={() => {}} move="e4" /> */}
-          <div className="w-1/2 h-fit">
+      <div className="h-full w-full flex items-center sm:p-16 p-4">
+        <div className="flex h-full w-full justify-around items-center max-sm:flex-col">
+          <div className="w-1/2 h-fit max-sm:w-full">
             <Chessboard options={chessboardOptions} />
           </div>
-          <div className="h-3/4 w-2/5 overflow-y-scroll">
+          <div className="h-3/4 w-2/5 overflow-y-scroll max-sm:w-full max-sm:mt-4">
             <MoveView
-              chessGame={chessGame}
+              fen={chessGame.fen()}
               onMove={handleMove}
               onUndo={handleUndo}
               moves={registeredMoves}

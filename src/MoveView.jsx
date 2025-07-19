@@ -1,8 +1,6 @@
 import MoveCard from "./components/MoveCard";
 
-function MoveView({ chessGame, onMove, onUndo, moves }) {
-  const fen = chessGame.fen();
-
+function MoveView({ fen, onMove, onUndo, moves }) {
   return (
     <div>
       <MoveCard move="←" onClick={() => onUndo()} />
