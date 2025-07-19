@@ -27,7 +27,7 @@ function App() {
   async function handleMove(move) {
     if (!registeredMoves.find((e) => e.move === move)) {
       const a = await overlay.openAsync(({ isOpen, close }) => (
-        <AddMoveModal isOpen={isOpen} close={close} />
+        <AddMoveModal isOpen={isOpen} close={close} move={move} />
       ));
       console.log(move, a);
     }
@@ -51,6 +51,7 @@ function App() {
     <div className="h-screen w-screen flex items-center">
       <div className="h-full w-full flex items-center p-16">
         <div className="flex h-full w-full justify-around items-center">
+          {/* <AddMoveModal isOpen={true} close={() => {}} move="e4" /> */}
           <div className="w-1/2 h-fit">
             <Chessboard options={chessboardOptions} />
           </div>
@@ -59,6 +60,7 @@ function App() {
               chessGame={chessGame}
               onMove={handleMove}
               onUndo={handleUndo}
+              moves={registeredMoves}
             />
           </div>
         </div>

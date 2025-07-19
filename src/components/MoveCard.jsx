@@ -1,22 +1,12 @@
 import EditButton from "./EditButton";
 
-function MoveCard({
-  move,
-  onClick,
-  title,
-  description,
-  isEditable,
-  fen,
-  setDb,
-}) {
+function MoveCard({ fen, move, onClick, title, description, isEditable }) {
   function editMove(newTitle, newDescription) {
-    setDb((prevDb) => {
-      const updatedDb = new Map(prevDb);
-      const list = updatedDb.get(fen) || [];
-      const filteredList = list.filter((e) => e.move !== move);
-      filteredList.push({ move, title: newTitle, description: newDescription });
-      updatedDb.set(fen, filteredList);
-      return updatedDb;
+    console.log({
+      fen,
+      move,
+      title: newTitle,
+      description: newDescription,
     });
   }
 
@@ -26,7 +16,12 @@ function MoveCard({
       onClick={() => onClick()}
     >
       {isEditable && (
-        <EditButton title={title} description={description} onSave={editMove} />
+        <EditButton
+          move={move}
+          title={title}
+          description={description}
+          onSave={editMove}
+        />
       )}
       <span className="text-md font-bold">{move}</span>
       {title && <span>[{title}]</span>}
