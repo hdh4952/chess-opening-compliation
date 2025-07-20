@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "./Modal";
+import { MdClose } from "react-icons/md";
 
 function AddMoveModal({ isOpen, close, move }) {
   const [title, setTitle] = useState("");
@@ -8,6 +9,12 @@ function AddMoveModal({ isOpen, close, move }) {
   return (
     <Modal isOpen={isOpen}>
       <div className="p-4 rounded border-2 border-amber-800 bg-white h-2/3 w-1/2 max-sm:w-4/5 relative">
+        <button
+          className="absolute right-4 cursor-pointer"
+          onClick={() => close()}
+        >
+          <MdClose size={24} />
+        </button>
         <span className="text-lg font-bold">{move}</span>
         <div className="h-11/12 flex flex-col justify-around mt-2">
           <label htmlFor="title" className="mb-4">
@@ -31,14 +38,6 @@ function AddMoveModal({ isOpen, close, move }) {
             onChange={(e) => setDescription(e.target.value)}
           />
           <div className="flex justify-around">
-            <button
-              onClick={() => {
-                close();
-              }}
-              className="cursor-pointer rounded bg-red-400 hover:bg-red-600 text-white px-4 py-2 w-1/3"
-            >
-              Cancel
-            </button>
             <button
               onClick={() => {
                 close({ title, description });

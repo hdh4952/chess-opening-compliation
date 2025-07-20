@@ -26,10 +26,10 @@ function App() {
 
   async function handleMove(move) {
     if (!registeredMoves.find((e) => e.move === move)) {
-      const a = await overlay.openAsync(({ isOpen, close }) => (
+      const newMove = await overlay.openAsync(({ isOpen, close }) => (
         <AddMoveModal isOpen={isOpen} close={close} move={move} />
       ));
-      console.log(move, a);
+      console.log(move, newMove);
     }
 
     const newChessGame = new Chess(chessGame.fen());

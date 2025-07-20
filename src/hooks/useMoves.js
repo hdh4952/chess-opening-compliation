@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+import { supabase } from "../utils/supabase";
 
 function useMoves(fen) {
   const [data, setData] = useState([]);
@@ -19,9 +14,9 @@ function useMoves(fen) {
 
     async function fetchMoves() {
       const { data, error } = await supabase
-        .from('Move')
-        .select('*')
-        .eq('fen', fen);
+        .from("Move")
+        .select("*")
+        .eq("fen", fen);
 
       if (error) setError(error);
       else setData(data);

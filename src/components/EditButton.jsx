@@ -2,6 +2,7 @@ import { overlay } from "overlay-kit";
 import Modal from "./Modal";
 import { useState } from "react";
 import ConfirmModal from "./ConfirmModal";
+import { MdClose } from "react-icons/md";
 
 function EditButton({ move, title, description, onSave, onDelete }) {
   return (
@@ -42,6 +43,12 @@ function ModalWithEdit({
   return (
     <Modal isOpen={isOpen}>
       <div className="p-4 rounded border-2 border-amber-800 bg-white max-sm:w-4/5 h-2/3 w-1/2 relative">
+        <button
+          className="absolute right-4 cursor-pointer"
+          onClick={() => close()}
+        >
+          <MdClose size={24} />
+        </button>
         <span className="text-lg font-bold">{move}</span>
         <div className="h-11/12 flex flex-col justify-around mt-2">
           <label htmlFor="title" className="mb-4">
